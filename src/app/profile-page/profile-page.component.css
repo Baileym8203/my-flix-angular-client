@@ -1,0 +1,62 @@
+.bg {
+    background-image: url("../../assets/paul-volkmer-qVotvbsuM_c-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+header {
+    display: flex;
+    height: 90px;
+}
+.header {
+    color: white;
+    font-family: 'Exo';
+    font-size: 70px;
+    font-weight: 800;
+    padding-top: 30px;
+    margin-left: 16px;
+}
+.content {
+    padding: 50px;
+}
+mat-card {
+    color: white;
+    width: 350px;
+    background: rgba(78, 79, 83, .4);
+}
+.user-info, .user-favorites, .user-account {
+    padding: 10px;
+    padding-top: 20px;
+}
+.favorite-movies {
+    display: flex;
+}
+.remove {
+    margin-left: auto;
+}
+.update-btn {
+    background: #878bc6;
+    color: rgba(44, 48, 102, 1);
+}
+.delete-btn {
+    margin-left: 15px;
+    background: #f84bdf;
+    color: rgba(119, 26, 105, 1);
+}
+.home-btn {
+    background: #878bc6;
+    color: #2c3066;
+    margin-left: auto;
+    margin-top: 30px;
+    margin-right: 20px;
+    height: 40px;
+}
+.logout-btn {
+    background: #f84bdf;
+    color: #771a69;
+    margin-top: 30px;
+    margin-right: 20px;
+    height: 40px;
+}

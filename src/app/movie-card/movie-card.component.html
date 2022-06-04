@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container-fluid justify-content-space-between">
+      <a class="navbar-brand" href="/movies">BestMovies</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" aria-current="page" href="/welcome">Logout</a>
+          <a class="nav-link" href="/movies">Movies</a>
+          <a class="nav-link" href="/profile">Profile</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="bg">
+    <header>
+      <h1>myFlix</h1>
+      <button class="profile-btn" mat-raised-button (click)="this.router.navigate(['profile'])">
+        Profile
+      </button>
+      <button class="logout-btn" mat-raised-button (click)="logOutUser()">
+        Log Out
+      </button>
+    </header>
+  
+    <div class="content">
+      <div fxLayout="row wrap" fxLayoutGap="18px grid">
+        <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="33%" *ngFor="let movie of movies;">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>{{movie.Title}}</mat-card-title>
+              <mat-card-subtitle>Directed by: {{movie.Director.Name}}</mat-card-subtitle>
+            </mat-card-header>
+              <img src={{movie.ImagePath}} />
+            <mat-card-actions>
+              <button mat-button (click)="openGenreDialog(movie.Genre.Name, movie.Genre.Description)">Genre</button>
+              <button mat-button
+                (click)="openDirectorDialog(movie.Director.Name, movie.Director.Bio, movie.Director.Birth, movie.Director.death)">Director</button>
+              <button mat-button (click)="openSynopsisDialog(movie.Title, movie.Description)">Synopsis</button>
+              <mat-icon class="icon" mat-button (click)="addToFavorites(movie._id)">favorite_border</mat-icon>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+    </div>

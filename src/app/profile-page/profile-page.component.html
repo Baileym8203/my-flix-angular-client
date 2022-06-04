@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container-fluid justify-content-space-between">
+      <a class="navbar-brand" href="/movies">BestMovies</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" aria-current="page" href="/welcome">Logout</a>
+          <a class="nav-link" href="/movies">Movies</a>
+          <a class="nav-link" href="/profile">Profile</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="bg">
+    <header>
+      <h1 class="header">myFlix</h1>
+      <button class="home-btn" mat-raised-button (click)="this.router.navigate(['movies'])">
+        Home
+      </button>
+      <button class="logout-btn" mat-raised-button (click)="logOutUser()">
+        Log Out
+      </button>
+    </header>
+    <div class="content">
+      <mat-card>
+        <div>
+          <h1>Hello, {{ user.Username }}.</h1>
+        </div>
+        <div class="user-info">
+          <h2>Your Info</h2>
+          <!-- <mat-divider></mat-divider> -->
+          <p>Email: {{ user.Email }}</p>
+          <p>Password: ******** </p>
+          <p>Birthday: {{ user.Birthday && formatDate(user.Birthday)}}</p>
+        </div>
+        <div class="user-favorites">
+  
+          <h2>Your Favorites</h2>
+          <div class="favorite-movies" *ngFor="let fav of userFavs;">
+            <p>{{fav.Title}}</p>
+            <button class="remove" (click)="removeFromFavs(fav._id)">x</button>
+          </div>
+  
+  
+        </div>
+        <div class="user-account">
+          <h2>Your Account</h2>
+          <button class="update-btn" mat-raised-button (click)="openUpdateUserDialog()">Update my info</button>
+          <button class="delete-btn" mat-raised-button (click)="deleteUser()">Delete my account</button>
+        </div>
+      </mat-card>
+    </div>
+  
+  </div>
